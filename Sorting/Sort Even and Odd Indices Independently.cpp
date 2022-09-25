@@ -11,28 +11,38 @@
 	space complexity: O(n)
 
 */
+
 #include<bits/stdc++.h>
 using namespace std;
 void sortEvenOdd(vector<int>& nums) {
-        vector<int>even;
-        vector<int>odd;
-        for(int i=0;i<nums.size();i++){
-            if(i%2==0)
-                even.push_back(nums[i]);
-            else
-                odd.push_back(nums[i]);
-        }
-        sort(even.begin(),even.end());
-        sort(odd.begin(),odd.end());
-        int i,j=0,k=odd.size()-1;
-        for(i=0;i<nums.size();i++){
-            if(i%2!=0)
-                nums[i]=odd[k--];
-            else
-                nums[i]=even[j++];
-        }
-        //return nums;
+    vector<int>even;
+    vector<int>odd;
+    for(int i=0;i<nums.size();i++){
+        if(i%2==0)
+            even.push_back(nums[i]);
+        else
+            odd.push_back(nums[i]);
     }
+    sort(even.begin(),even.end());
+    sort(odd.begin(),odd.end());
+    int i,j=0,k=odd.size()-1;
+    for(i=0;i<nums.size();i++){
+        if(i%2!=0)
+            nums[i]=odd[k--];
+        else
+            nums[i]=even[j++];
+    }
+}
+int main(){
+	int n;
+	cin>>n;
+	vector<int>nums(n);
+	for(int i=0;i<n;i++)
+		cin>>nums[i];
+	sortEvenOdd(nums);
+	for(int i=0;i<n;i++)
+		cout<<nums[i]<<" ";
+} 
 int main(){
 	int n;
 	cin>>n;
