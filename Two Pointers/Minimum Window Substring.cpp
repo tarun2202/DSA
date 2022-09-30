@@ -9,8 +9,8 @@
 		Output: "BANC"
 		Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t.
 		
-	naive approach--> TC:		SC: 
-	optimised approach--> TC: 	SC: 	
+	naive approach--> TC: O(t.n^2)	SC: O(1) 
+	optimised approach--> TC: O(n) 	SC: O(1) 	
 */
 
 #include<bits/stdc++.h>
