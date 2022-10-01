@@ -10,13 +10,13 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-bool checkSubarray(int arr[],int n){
+bool checkSubarray(int arr[],int n, int k){
 	unordered_map<int,int>m;
 	int psum=0;
 	m.insert({psum,1});
 	for(int i=0;i<n;i++){
 		psum += arr[i];
-		if(m.find(psum)!=m.end())
+		if(m.find(psum-k)!=m.end())
 			return true;
 		m.insert({psum,1});	
 	}
@@ -28,5 +28,7 @@ int main(){
 	int arr[n];
 	for(int i=0;i<n;i++)
 		cin>>arr[i];
-	cout<<checkSubarray(arr,n);
+	int k;
+	cin>>k;
+	cout<<checkSubarray(arr,n,k);
 }
